@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Bug Bank</title>
     <style>
-
+    <!--Bob remember the new entry on the page at /rookie-->
     </style>
 </head>
 
@@ -25,6 +25,92 @@
             <li class="navb-item"><a href="#about">About</a></li>
             <li class="navb-item"><a href="#products">Products</a></li>
             <li class="navb-item"><a href="#contact">Contact</a></li>
+
+
+
+
+<form action="search.php" method="GET">
+  <label for="search">Search for stuff</label>
+  <input id="search" type="text" name="file" placeholder="Search..." />
+  <button type="submit">Go</button>    
+</form>
+
+
+
+<style>
+//Vars 
+:root {
+  --rad: .7rem;
+  --dur: .3s;
+  --color-dark: #2f2f2f;
+  --color-light: #fff;
+  --color-brand: #57bd84;
+  --font-fam: 'Lato', sans-serif;
+  --height: 5rem;
+  --btn-width: 6rem;
+  --bez: cubic-bezier(0, 0, 0.43, 1.49);
+}
+
+// Setup
+body {background: var(--color-dark); display: flex; align-items: center; justify-content: center; min-height: 100vh }
+html { box-sizing: border-box; height: 100%; font-size: 10px; } *, *::before, *::after { box-sizing: inherit; }
+
+// Main styles
+form {
+  position: relative;
+  width: 30rem;
+  background: var(--color-brand);
+  border-radius: var(--rad);
+}
+input, button {
+  height: var(--height);
+  font-family: var(--font-fam);
+  border: 0;
+  color: var(--color-dark);
+  font-size: 1.8rem;
+}
+input[type="search"] {
+  outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
+  width: 100%;
+  background: var(--color-light);
+  padding: 0 1.6rem;
+  border-radius: var(--rad);
+  appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+  transition: all var(--dur) var(--bez);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+button {
+  display: none; // prevent being able to tab to it
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--btn-width);
+  font-weight: bold;
+  background: var(--color-brand);
+  border-radius: 0 var(--rad) var(--rad) 0;
+}
+input:not(:placeholder-shown) {
+  border-radius: var(--rad) 0 0 var(--rad);
+  width: calc(100% - var(--btn-width));
+  + button {
+    display: block;
+  }
+}
+label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+</style>
+
+
             <li class="navb-item"> <a href="login.php" class="btn btn-info my-2 my-sm-0 text-uppercase">Client Space</a></li>
         </ul>
     </header>
@@ -102,7 +188,7 @@
                                 <span> Investment representative </span></h5>
                             <br>
 
-                            <p class="card-text">“ Bbank is a good place to have a good financial situation and to invest.” </p>
+                            <p class="card-text" alt="flag:cwa.ctf(112 114 97 99 116 105 99 101 95 109 97 107 101 95 112 101 114 102 101 99 116)">“ Bbank is a good place to have a good financial situation and to invest.” </p>
                         </div>
                     </div>
                 </div>
@@ -237,16 +323,20 @@
             </div>
         </div>
     </div>
-    <footer class="container-fluid" id="gtco-footer">
+
+ <footer class="container-fluid" id="gtco-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6" id="contact">
                     <h4 style="color: black;"> Contact Us </h4>
-                    <input type="text" class="form-control" placeholder="Full Name">
-                    <input type="email" class="form-control" placeholder="Email Address">
-                    <textarea class="form-control" placeholder="Message"></textarea>
-                    <a href="#" class="submit-button" style="color: black;">Send</a>
-                </div>
+<form action="welcome.php" method="get">
+<input type="text" name="name" placeholder="Name"><br>
+ <input type="text" name="email" placeholder="Email"><br>
+<textarea class="form-control" placeholder="Message"></textarea>
+<input type="submit">
+</form>
+
+	</div>
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-6">
@@ -260,6 +350,12 @@
                                 <li class="navb-item"> <a href="login.php">Client Space</a></li>
 
                             </ul>
+<ul>
+	<li><b>Town/Country</b>
+	<a href="/apps/search.php?type=member&amp;city=INPUT">INPUT</a>
+	</li>
+
+</ul>
                             <h4 class="mt-5" style="color: black;">More about us</h4>
                             <ul class="nav follow-us-nav">
                                 <li class="nav-item"><a class="nav-link pl-0" href="#"><i class="fa fa-facebook"
